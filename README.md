@@ -1,25 +1,27 @@
 # GraphQL-Dotnet sample
 
-Simple example project using GraphQL with ASP.NET Core 3.1
+Simple sample project using GraphQL with .NET Core 3.1. Includes an ASP.NET Core 3.1 webapi and an Azure Function version using GraphQL
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Make sure all prerequisites are met, then open the solution in Visual Studio 2019
 
 ### Prerequisites
 
-This project requires an active Azure Cosmos DB instance or Cosmos DB Emulator instance
 
 ```
 ASP.NET Core 3.1 (might need 3.1.201 or later)
+Azure Functions Core Tools V3
 Azure Cosmos DB credentials
 ```
+
+This project depends on Azure Cosmos DB from an active Cosmos DB instance/emulator
 
 ## Built With
 
 * [GraphQL .NET](https://github.com/graphql-dotnet/graphql-dotnet) - GraphQL framework
-* [Cosmonaut](https://maven.apache.org/) - Database SDK/ORM
-* [Azure Cosmos DB](https://azure.microsoft.com/nb-no/services/cosmos-db/) - Used to generate RSS Feeds
+* [Cosmonaut](https://maven.apache.org/) - Database SDK
+* [Azure Cosmos DB](https://azure.microsoft.com/nb-no/services/cosmos-db/) - Database
 
 
 ## Authors
