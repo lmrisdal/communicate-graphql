@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Communicate.ErrorHandling.Rest" Version="0.1.4" />
+    <PackageReference Include="Cosmonaut" Version="2.11.3" />
+    <PackageReference Include="GraphQL.Server.Transports.WebSockets" Version="3.5.0-alpha0046" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GraphQL.Models\GraphQL.Models.csproj" />
+  </ItemGroup>
+
+</Project>
