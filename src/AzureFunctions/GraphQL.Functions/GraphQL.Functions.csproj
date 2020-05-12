@@ -15,9 +15,9 @@
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GraphQL.Data\GraphQL.Data.csproj" />
-    <ProjectReference Include="..\GraphQL.Graph\GraphQL.Graph.csproj" />
-    <ProjectReference Include="..\GraphQL.Models\GraphQL.Models.csproj" />
+    <ProjectReference Include="..\..\Shared\GraphQL.Data\GraphQL.Data.csproj" />
+    <ProjectReference Include="..\..\Shared\GraphQL.Graph\GraphQL.Graph.csproj" />
+    <ProjectReference Include="..\..\Shared\GraphQL.Models\GraphQL.Models.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
