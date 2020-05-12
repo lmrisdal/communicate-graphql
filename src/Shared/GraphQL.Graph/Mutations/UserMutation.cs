@@ -16,6 +16,7 @@ namespace GraphQL.Graph.Mutations
 
             Field<UserType>(
                 "addUser",
+                description: "Adds a user to the database",
                 arguments: new QueryArguments
                 {
                     new QueryArgument<CreateUserType>(){ Name = "user" }
@@ -28,6 +29,7 @@ namespace GraphQL.Graph.Mutations
 
             Field<UserType>(
                 "updateUser",
+                description: "Updates a user in the database",
                 arguments: new QueryArguments
                 {
                     new QueryArgument<UpdateUserType>(){ Name = "user" }
@@ -40,6 +42,7 @@ namespace GraphQL.Graph.Mutations
 
             Field<BooleanGraphType>(
                 "deleteUser",
+                description: "Deletes a user from the database",
                 arguments: new QueryArguments
                 {
                     new QueryArgument<StringGraphType>(){ Name = "userId" }
@@ -52,6 +55,7 @@ namespace GraphQL.Graph.Mutations
 
             Field<BooleanGraphType>(
                 "updatePassword",
+                description: "Updates a user's password",
                 arguments: new QueryArguments
                 {
                     new QueryArgument<UpdatePasswordType>(){ Name = "passwordChange" }

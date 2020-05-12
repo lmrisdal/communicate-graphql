@@ -17,6 +17,8 @@ using System.IO;
 using System;
 using GraphQL.Api.Middleware;
 using GraphQL.Api.Extensions;
+using GraphQL.Server.Ui.GraphiQL;
+using GraphQL.Server.Ui.Voyager;
 
 namespace GraphQL.Api
 {
@@ -65,8 +67,11 @@ namespace GraphQL.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseGraphQL<ISchema>();
+            app.UseGraphQL<ISchema>("/graphql");
+
             app.UseGraphQLPlayground(new GraphQLPlaygroundOptions());
+            app.UseGraphiQLServer(new GraphiQLOptions { Path = "/ui/graphiql" });
+            app.UseGraphQLVoyager(new GraphQLVoyagerOptions());
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>

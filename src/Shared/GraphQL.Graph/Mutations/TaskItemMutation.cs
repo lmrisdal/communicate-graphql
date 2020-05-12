@@ -16,6 +16,7 @@ namespace GraphQL.Graph.Mutations
 
             Field<TaskItemType>(
                 "addTask",
+                description: "Adds a task to the database",
                 arguments: new QueryArguments
                 {
                     new QueryArgument<TaskItemInputType>(){ Name = "task" }
@@ -29,6 +30,7 @@ namespace GraphQL.Graph.Mutations
 
             Field<TaskItemType>(
                 "updateTask",
+                description: "Updates a user in the database",
                 arguments: new QueryArguments
                 {
                     new QueryArgument<TaskItemInputType>(){ Name = "task" }
@@ -41,6 +43,7 @@ namespace GraphQL.Graph.Mutations
 
             Field<BooleanGraphType>(
                 "deleteTask",
+                description: "Deletes a user from the database",
                 arguments: new QueryArguments
                 {
                     new QueryArgument<StringGraphType>(){ Name = "taskId" }

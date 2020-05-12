@@ -12,10 +12,11 @@ namespace GraphQL.Graph.Queries
         {
             this.repo = repo;
 
-            Field<ListGraphType<TaskItemType>>("tasks", resolve: context => repo.FetchAll());
+            Field<ListGraphType<TaskItemType>>("tasks", description: "Gets all tasks from the database", resolve: context => repo.FetchAll());
 
             Field<TaskItemType>(
                 name: "task",
+                description: "Gets a single task based on ID",
                 arguments: new QueryArguments(
                     new QueryArgument<IdGraphType> { Name = "id" }
                 ),

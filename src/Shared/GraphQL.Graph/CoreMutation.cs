@@ -8,8 +8,8 @@ namespace GraphQL.Graph
         public CoreMutation()
         {
             Name = "Mutation";
-            Field<UserMutation>("users", resolve: context => new { });
-            Field<TaskItemMutation>("tasks", resolve: context => new { });
+            Field<UserMutation>("users", description: "Mutations for users", resolve: context => new { });
+            Field<TaskItemMutation>("tasks", description: "Mutations for tasks", resolve: context => new { });
         }
     }
 }

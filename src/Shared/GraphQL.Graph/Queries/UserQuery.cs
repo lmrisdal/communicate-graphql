@@ -12,10 +12,11 @@ namespace GraphQL.Graph.Queries
         {
             this.repo = repo;
 
-            Field<ListGraphType<UserType>>("users", resolve: context => repo.FetchAll());
+            Field<ListGraphType<UserType>>("users", description: "Gets all users from the database", resolve: context => repo.FetchAll());
 
             Field<UserType>(
                 name: "user",
+                description: "Gets a single user based on ID",
                 arguments: new QueryArguments(
                     new QueryArgument<IdGraphType> { Name = "id" }
                 ),
