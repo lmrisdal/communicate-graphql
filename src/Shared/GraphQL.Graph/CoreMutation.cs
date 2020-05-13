@@ -9,7 +9,7 @@ namespace GraphQL.Graph
         {
             Name = "Mutation";
             Field<UserMutation>("users", description: "Mutations for users", resolve: context => new { });
-            Field<TaskItemMutation>("tasks", description: "Mutations for tasks", resolve: context => new { });
+            Field<TodoItemMutation>("todos", description: "Mutations for todos", resolve: context => new { });
         }
     }
 }

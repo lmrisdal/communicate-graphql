@@ -1,6 +1,6 @@
 using Cosmonaut;
 using Cosmonaut.Extensions.Microsoft.DependencyInjection;
-using GraphQL.Data.TaskItemRepository;
+using GraphQL.Data.TodoItemRepository;
 using GraphQL.Data.UserRepository;
 using GraphQL.Models;
 using GraphQL.Server;
@@ -40,10 +40,10 @@ namespace GraphQL.Api
 
             CosmosStoreSettings cosmosSettings = new CosmosStoreSettings(databaseName, databaseUri, authKey);
             services.AddCosmosStore<User>(cosmosSettings);
-            services.AddCosmosStore<TaskItem>(cosmosSettings);
+            services.AddCosmosStore<TodoItem>(cosmosSettings);
 
             services.AddSingleton<IUserRepository, UserRepository>();
-            services.AddSingleton<ITaskItemRepository, TaskItemRepository>();
+            services.AddSingleton<ITodoItemRepository, TodoItemRepository>();
 
             services.AddGraphQLServices();
             services.AddGraphQL()

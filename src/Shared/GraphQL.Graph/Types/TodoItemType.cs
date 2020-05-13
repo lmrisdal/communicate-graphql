@@ -4,11 +4,11 @@ using GraphQL.Types;
 
 namespace GraphQL.Graph.Types
 {
-    public class TaskItemType : ObjectGraphType<TaskItem>
+    public class TodoItemType : ObjectGraphType<TodoItem>
     {
-        public TaskItemType(IUserRepository userRepo)
+        public TodoItemType(IUserRepository userRepo)
         {
-            Name = "TaskItemType";
+            Name = nameof(TodoItemType);
             Field(c => c.Id, type: typeof(IdGraphType));
             Field(c => c.Title);
             Field(c => c.Description);
@@ -20,11 +20,11 @@ namespace GraphQL.Graph.Types
     }
 
 
-    public class TaskItemInputType : InputObjectGraphType<TaskItem>
+    public class TodoItemInputType : InputObjectGraphType<TodoItem>
     {
-        public TaskItemInputType()
+        public TodoItemInputType()
         {
-            Name = "TaskItemInputType";
+            Name = nameof(TodoItemInputType);
             Field(c => c.Id, type: typeof(IdGraphType));
             Field(c => c.Title, nullable: true);
             Field(c => c.Description, nullable: true);

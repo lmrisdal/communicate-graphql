@@ -1,4 +1,4 @@
-﻿using GraphQL.Data.TaskItemRepository;
+﻿using GraphQL.Data.TodoItemRepository;
 using GraphQL.Models;
 using GraphQL.Types;
 
@@ -6,7 +6,7 @@ namespace GraphQL.Graph.Types
 {
     public class UserType : ObjectGraphType<User>
     {
-        public UserType(ITaskItemRepository taskRepo)
+        public UserType(ITodoItemRepository taskRepo)
         {
             Name = nameof(UserType);
             Field(u => u.Id, type: typeof(IdGraphType));
@@ -17,7 +17,7 @@ namespace GraphQL.Graph.Types
             Field(u => u.PhoneNumber);
             Field(u => u.Password);
             Field<AddressType>("address", nameof(AddressType));
-            Field<ListGraphType<TaskItemType>>("tasks", resolve: context => taskRepo.FetchTasksForUser(context.Source.Id));
+            Field<ListGraphType<TodoItemType>>("todos", resolve: context => taskRepo.FetchTodosForUser(context.Source.Id));
         }
     }
 

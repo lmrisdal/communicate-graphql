@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using static GraphQL.Validation.Rules.OverlappingFieldsCanBeMerged;
 
-namespace GraphQL.Data.TaskItemRepository
+namespace GraphQL.Data.TodoItemRepository
 {
-    public interface ITaskItemRepository : IRepository<TaskItem>
+    public interface ITodoItemRepository : IRepository<TodoItem>
     {
-        Task<IList<TaskItem>> FetchTasksForUser(string userId);
+        Task<IList<TodoItem>> FetchTodosForUser(string userId);
     }
 }

@@ -8,8 +8,8 @@ namespace GraphQL.Graph
         public CoreQuery()
         {
             Name = "Query";
-            Field<UserQuery>("userQuery", description: "Queries for users", resolve: context => new { });
-            Field<TaskItemQuery>("taskQuery", description: "Queries for tasks", resolve: context => new { });
+            Field<UserQuery>("users", description: "Queries for users", resolve: context => new { });
+            Field<TodoItemQuery>("todos", description: "Queries for todo items", resolve: context => new { });
         }
     }
 }

@@ -6,7 +6,7 @@ using System;
 namespace GraphQL.Models
 {
     [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
-    public class TaskItem
+    public class TodoItem
     {
         [JsonProperty("id")]
         [CosmosPartitionKey]

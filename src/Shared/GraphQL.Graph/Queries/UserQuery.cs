@@ -12,7 +12,7 @@ namespace GraphQL.Graph.Queries
         {
             this.repo = repo;
 
-            Field<ListGraphType<UserType>>("users", description: "Gets all users from the database", resolve: context => repo.FetchAll());
+            Field<ListGraphType<UserType>>("allUsers", description: "Gets all users from the database", resolve: context => repo.FetchAll());
 
             Field<UserType>(
                 name: "user",

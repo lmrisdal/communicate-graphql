@@ -7,34 +7,34 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace GraphQL.Data.TaskItemRepository
+namespace GraphQL.Data.TodoItemRepository
 {
-    public class TaskItemRepository : ITaskItemRepository
+    public class TodoItemRepository : ITodoItemRepository
     {
-        private readonly ICosmosStore<TaskItem> store;
+        private readonly ICosmosStore<TodoItem> store;
 
-        public TaskItemRepository(ICosmosStore<TaskItem> store)
+        public TodoItemRepository(ICosmosStore<TodoItem> store)
         {
             this.store = store;
         }
 
-        public async Task<IList<TaskItem>> FetchAll()
+        public async Task<IList<TodoItem>> FetchAll()
         {
             return await store.Query().ToListAsync();
         }
 
-        public async Task<TaskItem> Fetch(string id)
+        public async Task<TodoItem> Fetch(string id)
         {
             return await store.FindAsync(id);
         }
 
-        public async Task<IList<TaskItem>> FetchTasksForUser(string userId)
+        public async Task<IList<TodoItem>> FetchTodosForUser(string userId)
         {
-            var tasks = await store.Query($"select * from c where c.assignedUserId = '{userId}'").ToListAsync();
-            return tasks;
+            var todos = await store.Query($"select * from c where c.assignedUserId = '{userId}'").ToListAsync();
+            return todos;
         }
 
-        public async Task<TaskItem> Add(TaskItem entity)
+        public async Task<TodoItem> Add(TodoItem entity)
         {
             entity.Id = Guid.NewGuid().ToString();
             entity.Created = DateTime.UtcNow;
@@ -42,7 +42,7 @@ namespace GraphQL.Data.TaskItemRepository
             return await store.AddAsync(entity);
         }
 
-        public async Task<TaskItem> Update(TaskItem entity)
+        public async Task<TodoItem> Update(TodoItem entity)
         {
             if (string.IsNullOrEmpty(entity.Title) && string.IsNullOrEmpty(entity.Description) && string.IsNullOrEmpty(entity.AssignedUserId))
             {
@@ -66,10 +66,10 @@ namespace GraphQL.Data.TaskItemRepository
             }
         }
 
-        private async Task<TaskItem> CompareObjectForUpdate(TaskItem entity)
+        private async Task<TodoItem> CompareObjectForUpdate(TodoItem entity)
         {
 
-            TaskItem current = null;
+            TodoItem current = null;
             if (entity.Created == null)
             {
                 if (current == null)
