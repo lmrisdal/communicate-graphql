@@ -6,7 +6,7 @@ namespace GraphQL.Graph.Types
 {
     public class UserType : ObjectGraphType<User>
     {
-        public UserType(ITodoItemRepository taskRepo)
+        public UserType(ITodoItemRepository todoRepo)
         {
             Name = nameof(UserType);
             Field(u => u.Id, type: typeof(IdGraphType));
@@ -17,7 +17,7 @@ namespace GraphQL.Graph.Types
             Field(u => u.PhoneNumber);
             Field(u => u.Password);
             Field<AddressType>("address", nameof(AddressType));
-            Field<ListGraphType<TodoItemType>>("todos", resolve: context => taskRepo.FetchTodosForUser(context.Source.Id));
+            Field<ListGraphType<TodoItemType>>("todos", resolve: context => todoRepo.FetchTodosForUser(context.Source.Id));
         }
     }
 
