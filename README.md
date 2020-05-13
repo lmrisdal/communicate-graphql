@@ -1,6 +1,6 @@
 # GraphQL-Dotnet sample
 
-Simple sample project using GraphQL with .NET Core 3.1. Includes an ASP.NET Core 3.1 webapi and an Azure Function version using GraphQL
+Example project using GraphQL with .NET Core 3.1. Includes an ASP.NET Core 3.1 webapi and an Azure Function version using GraphQL
 
 ## Getting Started
 
